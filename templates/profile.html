@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/profile.css">
+</head>
+<section class="header">
+    <a class="title" href="{{ url_for('home') }}">CAR UNIVERSE</a>
+    <h3 class="page">Profile</h3>
+</section>
+<body>
+    <section class="bg-dark text-light text-center shadow mb-20">
+        <div class="container p-5 bg-dark">
+            <div class="row">
+                <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                    <h1 class="col text-center">user profile</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+    <div class="container p-10">
+        <div class="row"><br>
+            <h3 class="p-5">Here are your profile details</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Email: </li>
+                <li class="list-group-item">Token: </li> 
+            </ul>
+        </div>
+    </div>
+    </section>
+    <section class="cars">
+        <h1 class="car-title">Your Cars:</h1>
+        {% for post in posts %}
+        <h1>{{ post.car_title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted}}</p>
+        <p>{{ post.car_description}}</p>
+        {% endfor %}
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

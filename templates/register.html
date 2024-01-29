@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../../static/CSS/register.css">
+</head>
+<section class="header">
+    <a class="title" href="{{ url_for('site.home') }}">CAR UNIVERSE</a>
+    <h3 class="quote">"I Drive" - The Driver (<i>Drive</i>)</h3>
+    <img class="scorpion" src="../../static/Images/cars/Scorpion_insignia.png" alt="">
+</section>
+<body>
+    <img class="background" src="../../static/Images/cars/desert.jpg" alt="">
+    <section class="sign-up-container">
+            <main class="container p-5">
+                <div class="row">
+                    <aside class="col-12 col-md-6">
+                        <h2>Sign Up</h2>
+                        <form method="POST" action="">
+                            {{ form.hidden_tag() }}
+                            <div class="form-group">
+                                {{ form.username.label(class='form-control-label') }}
+                                {{ form.username(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.first_name.label(class='form-control-label') }}
+                                {{ form.first_name(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.last_name.label(class='form-control-label') }}
+                                {{ form.last_name(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.email.label(class='form-control-label') }}
+                                {{ form.email(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label(class='form-control-label') }}
+                                {{ form.password(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.confirm_password.label(class='form-control-label') }}
+                                {{ form.username(class='form-control form-control-lg')}}
+                            </div>
+                            <div class="form-group">
+                                {{ form.submit(class="btn-outline-info") }}
+                            </div>
+                        </form>
+                    </aside>
+                </div>
+            </main>
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../../static/CSS/profile.css">
+</head>
+<section class="header">
+    <a class="title" href="{{ url_for('site.home') }}">CAR UNIVERSE</a>
+    <h3 class="page">Profile</h3>
+</section>
+<body>
+    <section class="bg-dark text-light text-center shadow mb-20">
+        <div class="container p-5 bg-dark">
+            <div class="row">
+                <div class="d-md-flex bg-dark align-items-center justify-content-evenly">
+                    <h1 class="col text-center">{{ current_user.email}}'s user profile</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+    <div class="container p-10">
+        <div class="row"><br>
+            <h3 class="p-5">Here are your profile details</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Email: {{ current_user.email }}</li>
+                <li class="list-group-item">Token: {{ current_user.token }} </li> 
+            </ul>
+        </div>
+    </div>
+    </section>
+    <section class="cars">
+        <h1 class="car-title">Your Cars:</h1>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                <fieldset id="car-name">
+                    {{ form.car_title(class = 'form-control', placeholder = 'place car name here') }}
+                </fieldset>
+            </div>
+
+                <fieldset id="car-description">
+                    {{ form.car_description(class = "form-control", placeholder = "Describe the car ") }}
+                </fieldset>
+
+                {{ form.submit(class = "btn btn-primary btn-block mt-2", placeholder = 'Submit')}}
+
+        </form>
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

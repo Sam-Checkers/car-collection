@@ -1,0 +1,47 @@
+.header {
+    background-color: rgb(57, 3, 107);
+    color: white;
+    margin-top: -16px;
+    position: absolute;
+}
+
+.quote {
+    float: right;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 700px;
+}
+
+.title {
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 45px;
+    color: white;
+}
+
+.ford {
+    width: 40px;
+    height: 56px;
+    float: right;
+    position: absolute;
+    margin-left: 1878px;
+    margin-top: -56px;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.background {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    margin-top: -10px;
+    margin-left: 0px;
+}
+
+.sign-up-container {
+    margin-left: 750px;
+    position: absolute;
+    margin-top: -900px;
+    z-index: 2;
+    width: 1000px;
+}

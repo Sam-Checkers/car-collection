@@ -1,0 +1,31 @@
+.header {
+    background-color: rgb(57, 3, 107);
+    color: white;
+    margin-top: -16px;
+    position: absolute;
+    width: 100%;
+}
+
+.title {
+    text-decoration: none;
+    font-size: 45px;
+    color: white;
+}
+
+.page {
+    float: right;
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 1800px;
+}
+
+.background {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+    margin-top: -10px;
+}
+
+.car-title {
+    text-align: center;
+}
