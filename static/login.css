@@ -3,6 +3,7 @@
     color: white;
     margin-top: -16px;
     position: absolute;
+    width: 100%;
 }
 
 .quote {
@@ -24,8 +25,8 @@
     height: 56px;
     float: right;
     position: absolute;
-    margin-left: 1878px;
-    margin-top: -56px;
+    margin-left: 1571px;
+    margin-top: 12px;
 }
 
 html, body {margin: 0; height: 100%; overflow: hidden}

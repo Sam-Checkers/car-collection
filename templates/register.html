@@ -7,10 +7,10 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="../../static/CSS/register.css">
+<link rel="stylesheet" href="static\register.css">
 </head>
 <section class="header">
-    <a class="title" href="{{ url_for('site.home') }}">CAR UNIVERSE</a>
+    <a class="title" href="{{ url_for('home') }}">CAR UNIVERSE</a>
     <h3 class="quote">"I Drive" - The Driver (<i>Drive</i>)</h3>
     <img class="scorpion" src="../../static/Images/cars/Scorpion_insignia.png" alt="">
 </section>
@@ -21,7 +21,7 @@
                 <div class="row">
                     <aside class="col-12 col-md-6">
                         <h2>Sign Up</h2>
-                        <form method="POST" action="">
+                        <form method="POST">
                             {{ form.hidden_tag() }}
                             <div class="form-group">
                                 {{ form.username.label(class='form-control-label') }}

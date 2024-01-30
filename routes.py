@@ -3,32 +3,11 @@ from forms import RegistrationForm, LoginForm
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from models import User, Post
-
-app = Flask(__name__)
+from collection import app, db, bcrypt
 
 SECRET_KEY = '12345'
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://jjcuumbp:0ZzI8WrcGBRkUtNlmM8-ml4CkFWGB1KZ@salt.db.elephantsql.com/jjcuumbp'
-
-db = SQLAlchemy(app)
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(50), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
-    posts = db.relationship('Post', backref = 'author', lazy=True)
-    
-    def __repr__(self):
-        return f"User('{self.username}', {self.email}')"
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    car_title = db.Column(db.String(100), nullable=False)
-    date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    car_description = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
-    def __repr__(self):
-        return f"Post('{self.car_title}, '{self.date_posted}')"
 
 posts = [
     {
@@ -58,6 +37,10 @@ def profile():
 def register():
     form = RegistrationForm()
     if form.validate():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user=User(username=form.username.data, email=form.email.data, password=hashed_password)
+        db.session.add(user)
+        db.session.commit()
         print("success")
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
